@@ -5,27 +5,10 @@ import './ProductList.css';
 import Sidebar from '../organisms/Sidebar';
 import Header from '../atoms/Header';
 import Footer from '../atoms/Footer';
-
-var intlNumberFormatValues = ['de-DE', 'currency', 'EUR'];
-
-export var formatter = new Intl.NumberFormat(intlNumberFormatValues[0], {
-  style: intlNumberFormatValues[1],
-  currency: intlNumberFormatValues[2],
-});
+import Articles from '../organisms/Articles';
 
 type State = {
   categories: Category[];
-};
-
-export var ArticleCard = ({ article }: { article: Article }) => {
-  return (
-    <div className={'article'}>
-      <img src={article.images[0].path} />
-      <div>{article.name}</div>
-      <div>{formatter.format(article.prices.regular.value / 100)}</div>
-      <section role="button">Add to cart</section>
-    </div>
-  )
 };
 
 class ArticleList extends React.Component {
@@ -82,12 +65,6 @@ class ArticleList extends React.Component {
   }
 
   render() {
-    var articles = this.state.categories.map((category) => {
-      return category.categoryArticles.articles.map((article) => {
-        return <ArticleCard article={article} />;
-      });
-    });
-
     return (
       <div className={'page'}>
         <div className={'header'}>
@@ -99,15 +76,11 @@ class ArticleList extends React.Component {
         </div>
 
         <div className={'content'}>
-          {this.state.categories.length ? (
-            <h1>
-              {this.state.categories[0].name}
-              <small> ({this.state.categories[0].articleCount})</small>
-            </h1>
-          ) : (
-              'Loading...'
-            )}
-          <div className={'articles'}>{articles}</div>
+          <Articles 
+            categoryName={this.state.categories[0]?.name}
+            articleCount={this.state.categories[0]?.articleCount}
+            articles={this.state.categories[0]?.categoryArticles.articles}
+          />
         </div>
 
         <div className={'footer'}>
