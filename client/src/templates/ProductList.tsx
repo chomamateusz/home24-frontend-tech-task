@@ -1,94 +1,46 @@
 import React from 'react';
 
-import { Category } from '../types';
 import './ProductList.css';
 import Sidebar from '../organisms/Sidebar';
 import Header from '../atoms/Header';
 import Footer from '../atoms/Footer';
 import Articles from '../organisms/Articles';
 
-type State = {
-  categories: Category[];
-};
+import { Category } from '../types';
 
-class ArticleList extends React.Component {
-  state: State = {
-    categories: [],
-  };
+export interface ArticleListProps {
+  categories: Category[]
+}
 
-  componentDidMount() {
-    const xhr = new XMLHttpRequest();
+export const ArticleList = (props: ArticleListProps) => {
+  const { categories, ...otherProps } = props
 
-    xhr.open('POST', '/graphql');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    xhr.send(JSON.stringify({
-      query: `{
-        categories(ids: "156126", locale: de_DE) {
-          name
-          articleCount
-          childrenCategories {
-            name
-            urlPath
-          }
-          categoryArticles(first: 50) {
-            articles {
-              name
-              variantName
-              prices {
-                currency
-                regular {
-                  value
-                }
-              }
-              images(
-                format: WEBP
-                maxWidth: 200
-                maxHeight: 200
-                limit: 1
-              ) {
-                path
-              }
-            }
-          }
-        }
-      }`,
-    }));
-
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        const response = JSON.parse(xhr.response);
-
-        this.setState({ categories: response.data.categories });
-      }
-    }
-  }
-
-  render() {
-    return (
-      <div className={'page'}>
-        <div className={'header'}>
-          <Header />
-        </div>
-
-        <div className={'sidebar'}>
-          <Sidebar items={this.state.categories[0] && this.state.categories[0].childrenCategories} />
-        </div>
-
-        <div className={'content'}>
-          <Articles
-            categoryName={this.state.categories[0]?.name}
-            articleCount={this.state.categories[0]?.articleCount}
-            articles={this.state.categories[0]?.categoryArticles.articles}
-          />
-        </div>
-
-        <div className={'footer'}>
-          <Footer />
-        </div>
+  return (
+    <div
+      className={'page'}
+      {...otherProps}
+    >
+      <div className={'header'}>
+        <Header />
       </div>
-    );
-  }
+
+      <div className={'sidebar'}>
+        <Sidebar items={categories[0] && categories[0].childrenCategories} />
+      </div>
+
+      <div className={'content'}>
+        <Articles
+          categoryName={categories[0]?.name}
+          articleCount={categories[0]?.articleCount}
+          articles={categories[0]?.categoryArticles.articles}
+        />
+      </div>
+
+      <div className={'footer'}>
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
 export default ArticleList;
