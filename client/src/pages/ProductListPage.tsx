@@ -16,7 +16,16 @@ export const ProductListPage = (props: ProductListPageProps) => {
   const [categories, setCategories] = React.useState<Category[]>([])
 
   React.useEffect(() => {
-    getCategories().then(setCategories)
+    const loadCategories = async () => {
+      const categories = await getCategories()
+
+      setCategories(categories)
+
+      const categoryName = categories[0]?.name
+      if (categoryName) document.title = categoryName
+    }
+
+    loadCategories()
   }, [])
 
   return (

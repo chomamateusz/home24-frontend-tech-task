@@ -10,7 +10,7 @@
 [] input placeholder Search is in english in ProductList.tsx
 [] introduce i18n for handling hardcoded strings in ProductList.tsx
 [] introduce client side routing
-[] title in pages
+[X] title in pages
 [X] replace XHR with fetch or axios in ProductList.tsx
 [X] ahhh, who use vars nowadays? ;) in ProductList.tsx
 [X] remove unnecessary wrapping of ArticleList in PLP
