@@ -3,6 +3,8 @@ import React from 'react';
 import { Category, Article } from '../types';
 import './ProductList.css';
 import Sidebar from '../organisms/Sidebar';
+import Header from '../atoms/Header';
+import Footer from '../atoms/Footer';
 
 var intlNumberFormatValues = ['de-DE', 'currency', 'EUR'];
 
@@ -89,8 +91,7 @@ class ArticleList extends React.Component {
     return (
       <div className={'page'}>
         <div className={'header'}>
-          <strong>home24</strong>
-          <input placeholder={'Search'} />
+          <Header />
         </div>
 
         <div className={'sidebar'}>
@@ -110,7 +111,7 @@ class ArticleList extends React.Component {
         </div>
 
         <div className={'footer'}>
-          Alle Preise sind in Euro (€) inkl. gesetzlicher Umsatzsteuer und Versandkosten.
+          <Footer />
         </div>
       </div>
     );
