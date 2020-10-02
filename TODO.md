@@ -23,7 +23,3 @@
 - index.tsx
 - react-app-env.d.ts
 - setupTests.ts
-
-## What else can be done
-
-- added RWD but it is a functionality change for me, and simple refactoring should not do that
