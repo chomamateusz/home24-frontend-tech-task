@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 
 import './i18n'
 
-import ProductListPage from './pages/ProductListPage';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductListPage />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 )

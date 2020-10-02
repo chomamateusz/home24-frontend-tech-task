@@ -2,7 +2,7 @@
 
 ## Changes to be done
 
-[] introduce client side routing
+[X] introduce client side routing
 [X] introduce i18n for handling hardcoded strings in ProductList.tsx
 [X] not all types are imported from types.ts in ProductList.tsx
 [X] no css scoping in index.css

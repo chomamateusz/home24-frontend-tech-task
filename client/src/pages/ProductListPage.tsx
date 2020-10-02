@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from 'react-router'
 
 import ProductList from '../templates/ProductList'
 
@@ -9,11 +10,14 @@ export interface ProductListPageProps {
 }
 
 export const ProductListPage = (props: ProductListPageProps) => {
-  const { ...otherProps } = props
+  const { childCategoryName } = useParams()
 
   const [categories, setCategories] = React.useState<Category[]>([])
 
   React.useEffect(() => {
+    setCategories([])
+
+    // @TODO use childCategoryName to load chosen category data
     const loadCategories = async () => {
       const categories = await getCategories()
 
@@ -24,7 +28,7 @@ export const ProductListPage = (props: ProductListPageProps) => {
     }
 
     loadCategories()
-  }, [])
+  }, [childCategoryName])
 
   return (
     <div>

@@ -1,6 +1,7 @@
 import React from 'react'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { Link } from 'react-router-dom'
 
 export interface SidebarItemProps {
   urlPath: string,
@@ -21,7 +22,7 @@ export const SidebarItem = (props: SidebarItemProps) => {
       css={css`${listCss}`}
       {...otherProps}
     >
-      <a href={`/${urlPath}`}>{name}</a>
+      <Link to={`/${urlPath}`}>{name}</Link>
     </li>
   )
 }
