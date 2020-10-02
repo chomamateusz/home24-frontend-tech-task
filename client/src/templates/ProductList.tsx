@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Category, Article } from './types';
+import { Category, Article } from '../types';
 import './ProductList.css';
+import Sidebar from '../organisms/Sidebar';
 
 var intlNumberFormatValues = ['de-DE', 'currency', 'EUR'];
 
@@ -93,20 +94,7 @@ class ArticleList extends React.Component {
         </div>
 
         <div className={'sidebar'}>
-          <h3>Kategorien</h3>
-          {this.state.categories.length ? (
-            <ul>
-              {this.state.categories[0].childrenCategories.map(({ name, urlPath }) => {
-                return (
-                  <li>
-                    <a href={`/${urlPath}`}>{name}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            'Loading...'
-          )}
+          <Sidebar items={this.state.categories[0] && this.state.categories[0].childrenCategories} />
         </div>
 
         <div className={'content'}>
@@ -116,8 +104,8 @@ class ArticleList extends React.Component {
               <small> ({this.state.categories[0].articleCount})</small>
             </h1>
           ) : (
-            'Loading...'
-          )}
+              'Loading...'
+            )}
           <div className={'articles'}>{articles}</div>
         </div>
 

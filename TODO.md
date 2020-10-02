@@ -16,6 +16,7 @@
 [] input placeholder Search is in english in ProductList.tsx
 [] introduce i18n for handling hardcoded strings in ProductList.tsx
 [] introduce client side routing
+[] title in pages
 
 ## Files that are good to go from the start of
 
