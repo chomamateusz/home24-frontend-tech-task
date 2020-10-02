@@ -17,7 +17,7 @@ class ArticleList extends React.Component {
   };
 
   componentDidMount() {
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
 
     xhr.open('POST', '/graphql');
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -57,7 +57,7 @@ class ArticleList extends React.Component {
 
     xhr.onload = () => {
       if (xhr.status === 200) {
-        var response = JSON.parse(xhr.response);
+        const response = JSON.parse(xhr.response);
 
         this.setState({ categories: response.data.categories });
       }
@@ -76,7 +76,7 @@ class ArticleList extends React.Component {
         </div>
 
         <div className={'content'}>
-          <Articles 
+          <Articles
             categoryName={this.state.categories[0]?.name}
             articleCount={this.state.categories[0]?.articleCount}
             articles={this.state.categories[0]?.categoryArticles.articles}
