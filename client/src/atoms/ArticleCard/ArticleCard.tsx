@@ -25,6 +25,9 @@ export interface ArticleCardProps {
 }
 
 const articleCss = `
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
   border: 1px solid lavenderblush;
   padding: 10px;
 `
@@ -33,7 +36,6 @@ const articleItem = `
   display: inline-block;
   padding: 4px 0;
   margin: 4px 0;
-  width: 100%;
 `
 
 const articleButton = `
