@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Category, Article } from '../types';
+import { Category } from '../types';
 import './ProductList.css';
 import Sidebar from '../organisms/Sidebar';
 import Header from '../atoms/Header';
@@ -91,8 +91,4 @@ class ArticleList extends React.Component {
   }
 }
 
-var PLP = () => {
-  return <ArticleList />;
-};
-
-export default PLP;
+export default ArticleList;
