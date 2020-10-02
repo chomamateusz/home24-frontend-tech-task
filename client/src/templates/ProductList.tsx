@@ -7,7 +7,7 @@ import Header from '../atoms/Header/Header';
 import Footer from '../atoms/Footer/Footer';
 import Articles from '../organisms/Articles/Articles';
 
-import { Category } from '../types';
+import { Category } from '../api/categories';
 
 export interface ArticleListProps {
   categories: Category[]

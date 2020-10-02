@@ -4,7 +4,7 @@
 
 [] introduce client side routing
 [] introduce i18n for handling hardcoded strings in ProductList.tsx
-[] not all types are imported from types.ts in ProductList.tsx
+[X] not all types are imported from types.ts in ProductList.tsx
 [X] no css scoping in index.css
 [X] styles targeting tags in index.css
 [X] styles targeting tags in ProductList.css

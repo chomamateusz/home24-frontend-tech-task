@@ -2,9 +2,7 @@ import React from 'react'
 
 import ProductList from '../templates/ProductList'
 
-import getCategories from '../api/services/categories'
-
-import { Category } from '../types';
+import getCategories, { Category } from '../api/categories'
 
 export interface ProductListPageProps {
   [key: string]: any,

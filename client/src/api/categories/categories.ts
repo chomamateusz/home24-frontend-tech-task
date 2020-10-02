@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import categoriesQuery from '../queries/categories.query'
+import categoriesQuery from './categories.query'
 
 export const getCategories = () => {
   return axios.post(
