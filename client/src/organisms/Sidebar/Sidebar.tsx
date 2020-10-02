@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SidebarList, { SidebarListProps } from '../molecules/SidebarList'
+import SidebarList, { SidebarListProps } from '../../molecules/SidebarList/SidebarList'
 
 export interface SidebarProps extends SidebarListProps {
   [key: string]: any,

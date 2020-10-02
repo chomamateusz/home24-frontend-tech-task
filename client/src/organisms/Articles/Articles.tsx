@@ -1,6 +1,8 @@
 import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 
-import ArticleCard, { ArticleCardProps } from '../atoms/ArticleCard'
+import ArticleCard, { ArticleCardProps } from '../../atoms/ArticleCard/ArticleCard'
 
 export interface ArticlesProps {
   categoryName: string,
@@ -9,11 +11,17 @@ export interface ArticlesProps {
   [key: string]: any,
 }
 
+const articlesCss = `
+  display: grid;
+  grid-gap: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+`
+
 export const Articles = (props: ArticlesProps) => {
   const { categoryName, articleCount, articles, ...otherProps } = props
 
   return (
-    <>
+    <React.Fragment>
       {
         articles && articles.length ? (
           <h1>
@@ -24,7 +32,9 @@ export const Articles = (props: ArticlesProps) => {
             'Loading...'
           )
       }
-      <div className={'articles'}>
+      <div
+        css={css`${articlesCss}`}
+      >
         {
           articles && articles.map((article, i) => {
             return (
@@ -35,7 +45,7 @@ export const Articles = (props: ArticlesProps) => {
           })
         }
       </div>
-    </>
+    </React.Fragment>
   )
 }
 

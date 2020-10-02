@@ -5,10 +5,9 @@
 [] introduce client side routing
 [] introduce i18n for handling hardcoded strings in ProductList.tsx
 [] not all types are imported from types.ts in ProductList.tsx
-[] no css scoping in index.css
-[] styles targeting tags in index.css
-[] no css scoping in ProductList.css
-[] styles targeting tags in ProductList.css
+[X] no css scoping in index.css
+[X] styles targeting tags in index.css
+[X] styles targeting tags in ProductList.css
 [X] add key prop in lists
 [X] input placeholder Search is in english in ProductList.tsx
 [X] title in pages
