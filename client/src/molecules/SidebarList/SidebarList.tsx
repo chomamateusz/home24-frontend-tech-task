@@ -1,6 +1,7 @@
 import React from 'react'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useTranslation } from 'react-i18next'
 
 import SidebarItem, { SidebarItemProps } from '../../atoms/SideBarItem/SidebarItem'
 
@@ -17,6 +18,7 @@ const listCss = `
 
 export const SidebarList = (props: SidebarListProps) => {
   const { items, ...otherProps } = props
+  const { t } = useTranslation(undefined, { useSuspense: false })
 
   return (
     <React.Fragment>
@@ -38,7 +40,7 @@ export const SidebarList = (props: SidebarListProps) => {
             }
           </ul>
           :
-          'Loading...'
+          `${t('Loading')}...`
       }
     </React.Fragment>
   )

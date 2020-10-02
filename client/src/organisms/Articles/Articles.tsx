@@ -1,6 +1,7 @@
 import React from 'react'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useTranslation } from 'react-i18next'
 
 import ArticleCard, { ArticleCardProps } from '../../atoms/ArticleCard/ArticleCard'
 
@@ -19,6 +20,7 @@ const articlesCss = `
 
 export const Articles = (props: ArticlesProps) => {
   const { categoryName, articleCount, articles, ...otherProps } = props
+  const { t } = useTranslation(undefined, { useSuspense: false })
 
   return (
     <React.Fragment>
@@ -29,7 +31,7 @@ export const Articles = (props: ArticlesProps) => {
             <small> ({articleCount})</small>
           </h1>
         ) : (
-            'Loading...'
+            `${t('Loading')}...`
           )
       }
       <div

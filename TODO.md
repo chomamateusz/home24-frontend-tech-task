@@ -3,7 +3,7 @@
 ## Changes to be done
 
 [] introduce client side routing
-[] introduce i18n for handling hardcoded strings in ProductList.tsx
+[X] introduce i18n for handling hardcoded strings in ProductList.tsx
 [X] not all types are imported from types.ts in ProductList.tsx
 [X] no css scoping in index.css
 [X] styles targeting tags in index.css
@@ -23,8 +23,3 @@
 - index.tsx
 - react-app-env.d.ts
 - setupTests.ts
-
-## Problems I can't solve
-
-- loading right category from API without api docs
-- articles and categories from API do not have unique id so I can't be sure to uniques of key prop

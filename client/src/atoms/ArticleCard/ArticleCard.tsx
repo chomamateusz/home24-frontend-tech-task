@@ -1,6 +1,7 @@
 import React from 'react'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useTranslation } from 'react-i18next'
 
 import formatter from '../../utils/formatter'
 
@@ -46,6 +47,7 @@ const articleButton = `
 
 export const ArticleCard = (props: ArticleCardProps) => {
   const { images, name, prices } = props
+  const { t } = useTranslation(undefined, { useSuspense: false })
 
   return (
     <div
@@ -71,7 +73,7 @@ export const ArticleCard = (props: ArticleCardProps) => {
           ${articleButton}
         `}
       >
-        Add to cart
+        {t('Add to cart')}
       </a>
     </div>
   )

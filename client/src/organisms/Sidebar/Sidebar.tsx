@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import SidebarList, { SidebarListProps } from '../../molecules/SidebarList/SidebarList'
 
@@ -8,10 +9,11 @@ export interface SidebarProps extends SidebarListProps {
 
 export const Sidebar = (props: SidebarProps) => {
   const { items, ...otherProps } = props
+  const { t } = useTranslation(undefined, { useSuspense: false })
 
   return (
     <>
-      <h3>Kategorien</h3>
+      <h3>{t('Category')}</h3>
       <SidebarList items={items} />
     </>
   )
