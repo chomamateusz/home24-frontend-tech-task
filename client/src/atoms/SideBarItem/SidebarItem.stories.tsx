@@ -9,10 +9,10 @@ export default {
   component: SidebarItem,
 } as Meta;
 
-const Template: Story<SidebarItemProps> = (args) => <SidebarItem {...args} />;
+const Template: Story<SidebarItemProps> = args => <SidebarItem {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   urlPath: 'path/to',
   name: 'Item name',
-}
+};

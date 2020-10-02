@@ -1,22 +1,19 @@
-import React from 'react'
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-} from 'react-router-dom'
+} from 'react-router-dom';
 
-import ProductListPage from './pages/ProductListPage'
+import ProductListPage from './pages/ProductListPage';
 
-export const App = () => {
-
-  return (
+export const App = () => (
     <Router>
       <Switch>
         <Route path='/' exact={true} component={ProductListPage} />
         <Route path='/kategorie/:childCategoryName' component={ProductListPage} />
       </Switch>
     </Router>
-  )
-}
+  );
 
-export default App
+export default App;

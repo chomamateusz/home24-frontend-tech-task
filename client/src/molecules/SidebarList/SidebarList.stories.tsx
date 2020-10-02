@@ -9,7 +9,7 @@ export default {
   component: SidebarList,
 } as Meta;
 
-const Template: Story<SidebarListProps> = (args) => <SidebarList {...args} />;
+const Template: Story<SidebarListProps> = args => <SidebarList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -23,4 +23,4 @@ Default.args = {
       name: 'Item 2',
     },
   ],
-}
+};

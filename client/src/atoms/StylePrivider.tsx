@@ -1,9 +1,9 @@
-import React from 'react'
-import { css, Global } from '@emotion/core'
+import React from 'react';
+import { css, Global } from '@emotion/core';
 
 export interface StyleProviderProps {
-  children: any,
   [key: string]: any,
+  children: any,
 }
 
 const global = `
@@ -14,10 +14,10 @@ const global = `
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-`
+`;
 
 export const StyleProvider = (props: StyleProviderProps) => {
-  const { children } = props
+  const { children } = props;
 
   return (
     <React.Fragment>
@@ -28,7 +28,7 @@ export const StyleProvider = (props: StyleProviderProps) => {
         children
       }
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default StyleProvider
+export default StyleProvider;

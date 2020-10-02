@@ -1,24 +1,24 @@
-import React from 'react'
+import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { useTranslation } from 'react-i18next'
+import { css, jsx } from '@emotion/core';
+import { useTranslation } from 'react-i18next';
 
-import SidebarItem, { SidebarItemProps } from '../../atoms/SideBarItem/SidebarItem'
+import SidebarItem, { SidebarItemProps } from '../../atoms/SideBarItem/SidebarItem';
 
 export interface SidebarListProps {
-  items?: SidebarItemProps[],
   [key: string]: any,
+  items?: SidebarItemProps[],
 }
 
 const listCss = `
   list-style-type: none;
   margin: 0;
   padding: 0;
-`
+`;
 
 export const SidebarList = (props: SidebarListProps) => {
-  const { items, ...otherProps } = props
-  const { t } = useTranslation(undefined, { useSuspense: false })
+  const { items, ...otherProps } = props;
+  const { t } = useTranslation(undefined, { useSuspense: false });
 
   return (
     <React.Fragment>
@@ -29,21 +29,19 @@ export const SidebarList = (props: SidebarListProps) => {
             {...otherProps}
           >
             {
-              items.map((item, i) => {
-                return (
+              items.map((item, i) => (
                   <SidebarItem
                     key={`${i}-${item.urlPath}`}
                     {...item}
                   />
-                )
-              })
+                ))
             }
           </ul>
           :
           `${t('Loading')}...`
       }
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default SidebarList
+export default SidebarList;

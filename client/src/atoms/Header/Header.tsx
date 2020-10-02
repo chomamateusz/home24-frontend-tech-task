@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { useTranslation } from 'react-i18next'
+import { css, jsx } from '@emotion/core';
+import { useTranslation } from 'react-i18next';
 
 export interface HeaderProps {
   [key: string]: any,
@@ -9,11 +9,10 @@ export interface HeaderProps {
 
 const headerInputCss = `
   float: right;
-`
+`;
 
 export const Header = (props: HeaderProps) => {
-  const { ...otherProps } = props
-  const { t } = useTranslation(undefined, { useSuspense: false })
+  const { t } = useTranslation(undefined, { useSuspense: false });
 
   return (
     <React.Fragment>
@@ -23,7 +22,7 @@ export const Header = (props: HeaderProps) => {
         placeholder={t('Search')}
       />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

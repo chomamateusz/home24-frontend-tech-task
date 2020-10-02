@@ -1,21 +1,21 @@
-import React from 'react'
+import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { Link } from 'react-router-dom'
+import { css, jsx } from '@emotion/core';
+import { Link } from 'react-router-dom';
 
 export interface SidebarItemProps {
+  [key: string]: any,
   urlPath: string,
   name: string,
-  [key: string]: any,
 }
 
 const listCss = `
   margin: 0 0 0 8px;
   padding: 8px 0;
-`
+`;
 
 export const SidebarItem = (props: SidebarItemProps) => {
-  const { urlPath, name, ...otherProps } = props
+  const { urlPath, name, ...otherProps } = props;
 
   return (
     <li
@@ -24,7 +24,7 @@ export const SidebarItem = (props: SidebarItemProps) => {
     >
       <Link to={`/${urlPath}`}>{name}</Link>
     </li>
-  )
-}
+  );
+};
 
-export default SidebarItem
+export default SidebarItem;

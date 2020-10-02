@@ -9,7 +9,7 @@ export default {
   component: Sidebar,
 } as Meta;
 
-const Template: Story<SidebarProps> = (args) => <Sidebar {...args} />;
+const Template: Story<SidebarProps> = args => <Sidebar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

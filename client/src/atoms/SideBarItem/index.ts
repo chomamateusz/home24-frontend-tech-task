@@ -1,4 +1,4 @@
-import { SidebarItemProps as Type } from './SidebarItem'
-export type SidebarItemProps = Type
+import { SidebarItemProps as Type } from './SidebarItem';
+export type SidebarItemProps = Type;
 
-export { default, SidebarItem } from './SidebarItem'
+export { default, SidebarItem } from './SidebarItem';

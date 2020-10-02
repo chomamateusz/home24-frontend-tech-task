@@ -1,6 +1,6 @@
 import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core';
 
 import Sidebar from '../organisms/Sidebar';
 import Header from '../atoms/Header/Header';
@@ -10,7 +10,7 @@ import Articles from '../organisms/Articles/Articles';
 import { Category } from '../api/categories';
 
 export interface ArticleListProps {
-  categories: Category[]
+  categories: Category[],
 }
 
 const pageCss = `
@@ -22,32 +22,32 @@ const pageCss = `
     'sidebar content content'
     'footer footer footer';
   margin: 6px;
-`
+`;
 
 const pageItemCss = `
   padding: 10px;
-`
+`;
 
 const headerCss = `
   grid-area: header;
   background-color: lightblue;
-`
+`;
 
 const sidebarCss = `
   grid-area: sidebar;
   background-color: lavender;
-`
+`;
 const contentCss = `
   grid-area: content;
   grid-column: span 2;
-`
+`;
 const footerCss = `
   grid-area: footer;
   background-color: lightblue;
-`
+`;
 
 export const ArticleList = (props: ArticleListProps) => {
-  const { categories, ...otherProps } = props
+  const { categories, ...otherProps } = props;
 
   return (
     <div
@@ -95,6 +95,6 @@ export const ArticleList = (props: ArticleListProps) => {
       </div>
     </div>
   );
-}
+};
 
 export default ArticleList;

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { useTranslation } from 'react-i18next'
+import { css, jsx } from '@emotion/core';
+import { useTranslation } from 'react-i18next';
 
 export interface FooterProps {
   [key: string]: any,
@@ -9,16 +9,16 @@ export interface FooterProps {
 
 const footerCss = `
   text-align: center;
-`
+`;
 
 export const Footer = (props: FooterProps) => {
-  const { t } = useTranslation(undefined, { useSuspense: false })
+  const { t } = useTranslation(undefined, { useSuspense: false });
 
   return (
     <div css={css`${footerCss}`}>
       {t('All prices are in euros (€) including statutory sales tax and shipping costs')}.
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

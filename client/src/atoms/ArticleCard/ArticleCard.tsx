@@ -1,27 +1,27 @@
-import React from 'react'
+import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { useTranslation } from 'react-i18next'
+import { css, jsx } from '@emotion/core';
+import { useTranslation } from 'react-i18next';
 
-import formatter from '../../utils/formatter'
+import formatter from '../../utils/formatter';
 
-type Image = {
-  path: string
-}
+interface Image {
+  path: string,
+};
 
-type Prices = {
-  currency: string
+interface Prices {
+  currency: string,
   regular: {
-    value: number
-  }
-}
+    value: number,
+  },
+};
 
 export interface ArticleCardProps {
+  [key: string]: any,
   name: string,
   variantName: string,
   prices: Prices,
   images: Image[],
-  [key: string]: any,
 }
 
 const articleCss = `
@@ -30,13 +30,13 @@ const articleCss = `
   flex-direction: column;
   border: 1px solid lavenderblush;
   padding: 10px;
-`
+`;
 
 const articleItem = `
   display: inline-block;
   padding: 4px 0;
   margin: 4px 0;
-`
+`;
 
 const articleButton = `
   display: block;    
@@ -45,11 +45,11 @@ const articleButton = `
   border: 1px solid lightgray;
   cursor: pointer;
   text-align: center;
-`
+`;
 
 export const ArticleCard = (props: ArticleCardProps) => {
-  const { images, name, prices } = props
-  const { t } = useTranslation(undefined, { useSuspense: false })
+  const { images, name, prices } = props;
+  const { t } = useTranslation(undefined, { useSuspense: false });
 
   return (
     <div
@@ -58,6 +58,7 @@ export const ArticleCard = (props: ArticleCardProps) => {
       <img
         css={css`${articleItem}`}
         src={images[0].path}
+        alt={name}
       />
       <div
         css={css`${articleItem}`}
@@ -78,7 +79,7 @@ export const ArticleCard = (props: ArticleCardProps) => {
         {t('Add to cart')}
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default ArticleCard
+export default ArticleCard;

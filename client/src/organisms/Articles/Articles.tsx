@@ -1,26 +1,26 @@
-import React from 'react'
+import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { useTranslation } from 'react-i18next'
+import { css, jsx } from '@emotion/core';
+import { useTranslation } from 'react-i18next';
 
-import ArticleCard, { ArticleCardProps } from '../../atoms/ArticleCard/ArticleCard'
+import ArticleCard, { ArticleCardProps } from '../../atoms/ArticleCard/ArticleCard';
 
 export interface ArticlesProps {
+  [key: string]: any,
   categoryName: string,
   articleCount: number,
   articles: ArticleCardProps[],
-  [key: string]: any,
 }
 
 const articlesCss = `
   display: grid;
   grid-gap: 26px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
-`
+`;
 
 export const Articles = (props: ArticlesProps) => {
-  const { categoryName, articleCount, articles, ...otherProps } = props
-  const { t } = useTranslation(undefined, { useSuspense: false })
+  const { categoryName, articleCount, articles } = props;
+  const { t } = useTranslation(undefined, { useSuspense: false });
 
   return (
     <React.Fragment>
@@ -38,17 +38,15 @@ export const Articles = (props: ArticlesProps) => {
         css={css`${articlesCss}`}
       >
         {
-          articles && articles.map((article, i) => {
-            return (
+          articles && articles.map((article, i) => (
               <ArticleCard
                 key={`${i}-${article.name}`}
                 {...article} />
-            )
-          })
+            ))
         }
       </div>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Articles
+export default Articles;

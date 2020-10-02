@@ -22,6 +22,6 @@ export const query = `{
       }
     }
   }
-}`
+}`;
 
-export default query
+export default query;
