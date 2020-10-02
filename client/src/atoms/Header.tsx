@@ -10,7 +10,7 @@ export const Header = (props: HeaderProps) => {
   return (
     <>
       <strong>home24</strong>
-      <input placeholder={'Search'} />
+      <input placeholder={'Suche'} />
     </>
   )
 }
