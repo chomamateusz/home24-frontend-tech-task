@@ -9,7 +9,7 @@ import Articles from '../organisms/Articles/Articles';
 
 import { Category } from '../api/categories';
 
-export interface ArticleListProps {
+export interface ProductListProps {
   categories: Category[],
 }
 
@@ -21,7 +21,6 @@ const pageCss = `
     'header header header'
     'sidebar content content'
     'footer footer footer';
-  margin: 6px;
 `;
 
 const pageItemCss = `
@@ -46,7 +45,7 @@ const footerCss = `
   background-color: lightblue;
 `;
 
-export const ArticleList = (props: ArticleListProps) => {
+export const ProductList = (props: ProductListProps) => {
   const { categories, ...otherProps } = props;
 
   return (
@@ -97,4 +96,4 @@ export const ArticleList = (props: ArticleListProps) => {
   );
 };
 
-export default ArticleList;
+export default ProductList;
