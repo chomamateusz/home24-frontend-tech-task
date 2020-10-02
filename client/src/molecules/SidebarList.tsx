@@ -18,8 +18,13 @@ const SidebarList = (props: SidebarListProps) => {
             {...otherProps}
           >
             {
-              items.map((item) => {
-                return <SidebarItem {...item} />
+              items.map((item, i) => {
+                return (
+                  <SidebarItem
+                    key={`${i}-${item.urlPath}`}
+                    {...item}
+                  />
+                )
               })
             }
           </ul>

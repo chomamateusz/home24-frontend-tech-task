@@ -26,8 +26,12 @@ export const Articles = (props: ArticlesProps) => {
       }
       <div className={'articles'}>
         {
-          articles && articles.map((article) => {
-            return <ArticleCard {...article} />;
+          articles && articles.map((article, i) => {
+            return (
+              <ArticleCard
+                key={`${i}-${article.name}`}
+                {...article} />
+            )
           })
         }
       </div>

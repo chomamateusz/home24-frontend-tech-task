@@ -9,6 +9,7 @@
 [] styles targeting tags in index.css
 [] no css scoping in ProductList.css
 [] styles targeting tags in ProductList.css
+[X] add key prop in lists
 [X] input placeholder Search is in english in ProductList.tsx
 [X] title in pages
 [X] replace XHR with fetch or axios in ProductList.tsx
@@ -27,3 +28,4 @@
 ## Problems I can't solve
 
 - loading right category from API without api docs
+- articles and categories from API do not have unique id so I can't be sure to uniques of key prop
